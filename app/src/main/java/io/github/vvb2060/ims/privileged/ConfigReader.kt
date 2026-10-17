@@ -61,7 +61,7 @@ class ConfigReader : Instrumentation() {
             Log.e(TAG, "read config failed", t)
         } finally {
             if (delegated) {
-                runCatching { am.stopDelegateShellPermissionIdentity() }
+                runCatching { am.stopDelegateShellPermissionIdentityCompat() }
                     .onFailure { Log.w(TAG, "stop delegate shell identity failed", it) }
             }
         }
